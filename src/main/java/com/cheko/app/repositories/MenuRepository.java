@@ -14,6 +14,8 @@ public interface MenuRepository extends JpaRepository<MenuEntity, Long>, JpaSpec
 
     Long countByCategory(CategoryEntity category);
 
+    List<MenuEntity> findByCategory(CategoryEntity category);
+
     List<MenuEntity> findByCategory_NameIgnoreCase(String category);
 
     List<MenuEntity> findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(String q1, String q2);

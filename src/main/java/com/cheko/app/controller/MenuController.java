@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cheko.app.dto.CategoryWithMenuItemsSearchDto;
 import com.cheko.app.dto.MenuEntityDto;
 import com.cheko.app.services.MenuService;
 
@@ -28,5 +29,12 @@ public class MenuController {
     @GetMapping("/{id}")
     public MenuEntityDto retrieveOne(@PathVariable Long id) {
         return service.retrieveOneItem(id);
+    }
+
+    @GetMapping("/grouped-by-category")
+    public List<CategoryWithMenuItemsSearchDto> searchGroupedByCategory(
+            @RequestParam(required = false) String q,
+            @RequestParam(required = false) String category) {
+        return service.searchGroupedByCategory(q, category);
     }
 }
