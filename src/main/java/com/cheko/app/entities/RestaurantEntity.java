@@ -32,4 +32,9 @@ public class RestaurantEntity {
     @Column(name = "lng", nullable = false)
     private double lng;
 
+    public RestaurantEntity(String name, double let, double lng) {
+        this.name = name;
+        this.let = let;
+        this.lng = lng;
+    }
 }

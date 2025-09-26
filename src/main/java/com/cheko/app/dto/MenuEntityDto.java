@@ -14,6 +14,8 @@ import lombok.Setter;
 
 public class MenuEntityDto {
 
+    private Long itemId;
+
     private String itemName;
 
     private String itemDescription;
@@ -24,18 +26,14 @@ public class MenuEntityDto {
 
     private BigDecimal itemPrice;
 
-    private CategoryEntity itemCategory;
-
-    private RestaurantEntity itemRestaurant;
-
     public MenuEntityDto(MenuEntity item) {
+        this.itemId = item.getId();
         this.itemName = item.getName();
         this.itemDescription = item.getDescription();
         this.itemCalories = item.getCalories();
         this.itemImageUrl = item.getImageUrl();
         this.itemPrice = item.getPrice();
-        this.itemCategory = item.getCategory();
-        this.itemRestaurant = item.getRestaurant();
+
     }
 
 }
