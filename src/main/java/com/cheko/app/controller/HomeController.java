@@ -13,6 +13,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name = "Home", description = "Home Controller for basic operations")
 public class HomeController {
 
+    @GetMapping
+    @Operation(summary = "Welcome message", description = "Returns a welcome message for Cheko application")
+    @ApiResponse(responseCode = "200", description = "Successful response")
+    public String home() {
+        return "Welcome to Cheko Application!";
+    }
+
     @GetMapping("/health")
     @Operation(summary = "Health check", description = "Returns application health status")
     @ApiResponse(responseCode = "200", description = "Application is healthy")
