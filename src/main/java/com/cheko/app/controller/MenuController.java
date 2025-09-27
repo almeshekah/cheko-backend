@@ -31,7 +31,7 @@ public class MenuController {
         return service.retrieveOneItem(id);
     }
 
-    @GetMapping("/grouped-by-category")
+    @GetMapping("/list-by-category")
     public List<CategoryWithMenuItemsSearchDto> searchGroupedByCategory(
             @RequestParam(required = false) String q,
             @RequestParam(required = false) String category) {
