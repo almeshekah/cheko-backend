@@ -58,6 +58,7 @@ public class MenuService {
     }
 
     public List<CategoryWithMenuItemsSearchDto> searchGroupedByCategory(String q, String category) {
+
         List<MenuEntity> menuItems;
 
         if (q != null && category == null) {
@@ -75,11 +76,9 @@ public class MenuService {
             menuItems = repository.findAll();
         }
 
-        // تجميع العناصر حسب الفئة
         Map<CategoryEntity, List<MenuEntity>> groupedByCategory = menuItems.stream()
                 .collect(Collectors.groupingBy(MenuEntity::getCategory));
 
-        // تحويل إلى DTO
         return groupedByCategory.entrySet().stream()
                 .map(entry -> {
                     CategoryEntity cat = entry.getKey();
