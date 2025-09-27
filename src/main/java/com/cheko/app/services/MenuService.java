@@ -90,4 +90,24 @@ public class MenuService {
                 .collect(Collectors.toList());
     }
 
+    public List<CategoryWithMenuItemsSearchDto> getSecondHighestCaloriePerCategory() {
+        List<MenuEntity> secondHighestCalorieItems = repository.findSecondHighestCaloriePerCategory();
+
+        Map<CategoryEntity, List<MenuEntity>> groupedByCategory = secondHighestCalorieItems.stream()
+                .collect(Collectors.groupingBy(MenuEntity::getCategory));
+
+        return groupedByCategory.entrySet().stream()
+                .map(entry -> {
+                    CategoryEntity category = entry.getKey();
+                    List<MenuEntityDto> menuItemDtos = entry.getValue().stream()
+                            .map(MenuEntityDto::new)
+                            .collect(Collectors.toList());
+                    return new CategoryWithMenuItemsSearchDto(
+                            category.getId(),
+                            category.getName(),
+                            menuItemDtos);
+                })
+                .collect(Collectors.toList());
+    }
+
 }

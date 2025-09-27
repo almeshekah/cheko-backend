@@ -37,4 +37,9 @@ public class MenuController {
             @RequestParam(required = false) String category) {
         return service.searchGroupedByCategory(q, category);
     }
+
+    @GetMapping("/second-highest-calorie-per-category")
+    public List<CategoryWithMenuItemsSearchDto> getSecondHighestCaloriePerCategory() {
+        return service.getSecondHighestCaloriePerCategory();
+    }
 }

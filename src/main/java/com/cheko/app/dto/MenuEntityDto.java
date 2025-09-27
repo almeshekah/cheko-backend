@@ -3,9 +3,6 @@ package com.cheko.app.dto;
 import java.math.BigDecimal;
 
 import com.cheko.app.entities.MenuEntity;
-import com.cheko.app.entities.CategoryEntity;
-import com.cheko.app.entities.RestaurantEntity;
-
 import lombok.Getter;
 import lombok.Setter;
 

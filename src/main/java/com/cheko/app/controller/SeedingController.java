@@ -126,7 +126,7 @@ public class SeedingController {
         beefBurger.setPrice(new BigDecimal("35.00"));
         beefBurger.setCalories(520);
         beefBurger.setImageUrl("https://example.com/beef-burger.jpg");
-        beefBurger.setCategory(burgers);
+        beefBurger.setCategory(drinks);
         beefBurger.setRestaurant(mainRestaurant);
         menuRepository.save(beefBurger);
 
@@ -170,7 +170,7 @@ public class SeedingController {
         caesarSalad.setPrice(new BigDecimal("22.00"));
         caesarSalad.setCalories(280);
         caesarSalad.setImageUrl("https://example.com/caesar-salad.jpg");
-        caesarSalad.setCategory(salads);
+        caesarSalad.setCategory(desserts);
         caesarSalad.setRestaurant(mainRestaurant);
         menuRepository.save(caesarSalad);
     }
