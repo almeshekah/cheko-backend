@@ -15,6 +15,8 @@ public class CategoryWithCountDto {
 
     private String name;
 
+    private String imageUrl;
+
     private Long menuItemsCount;
 
 }

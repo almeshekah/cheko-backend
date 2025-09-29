@@ -25,6 +25,9 @@ public class CategoryEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "imageUrl")
+    private String imageUrl;
+
     public CategoryEntity(String name) {
         this.name = name;
     }
